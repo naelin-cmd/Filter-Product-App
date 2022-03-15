@@ -13,8 +13,8 @@ class ProductsApi {
       final List products = json.decode(response.body);
 
       return products.map((json) => Product.fromJson(json)).where((product) {
-        final nameLower = product.title.toLowerCase();
-        final brandLower = product.author.toLowerCase();
+        final nameLower = product.name.toLowerCase();
+        final brandLower = product.brand.toLowerCase();
         final searchLower = query.toLowerCase();
 
         return nameLower.contains(searchLower) ||
