@@ -72,7 +72,7 @@ class FilterNetworkListPageState extends State<FilterNetworkListPage> {
   Widget buildSearch() => SearchWidget(
         text: query,
         hintText: 'Product Name',
-        onChanged: searchBook,
+        onChanged: searchProduct,
       );
 
   Future searchProduct(String query) async => debounce(() async {
