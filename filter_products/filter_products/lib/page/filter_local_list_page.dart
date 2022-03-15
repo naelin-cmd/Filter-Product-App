@@ -31,7 +31,7 @@ class FilterLocalListPageState extends State<FilterLocalListPage> {
             buildSearch(),
             Expanded(
               child: ListView.builder(
-                itemCount: books.length,
+                itemCount: products.length,
                 itemBuilder: (context, index) {
                   final product = products[index];
 
@@ -49,15 +49,15 @@ class FilterLocalListPageState extends State<FilterLocalListPage> {
         onChanged: searchBook,
       );
 
-  Widget buildBook(Book book) => ListTile(
+  Widget buildBook(Product product) => ListTile(
         leading: Image.network(
-          book.urlImage,
+          product.urlImage,
           fit: BoxFit.cover,
           width: 50,
           height: 50,
         ),
-        title: Text(product.title),
-        subtitle: Text(product.author),
+        title: Text(product.name),
+        subtitle: Text(product.brand),
       );
 
   void searchProduct(String query) {
